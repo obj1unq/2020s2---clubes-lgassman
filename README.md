@@ -19,11 +19,14 @@ Si bien cualquier club puede tener equipos y actividades sociales, cada club def
 ## Requerimientos.
 
 ### Consultas simples
-- Saber todos los socios de un club, todos los jugadores de un equipo y todos los socios de una actividad social
+- Saber todos los socios de un club, 
+- todos los jugadores de un equipo y 
+- todos los socios de una actividad social
 
 - Saber el socio más viejo de un club.
 
-- Obtener los socios destacados de un club, un socio destacado es aquel que es capitán de un equipo u organizador de una actividad social.
+- Obtener los socios destacados de un club, un socio destacado es aquel que es capitán de un equipo 
+u organizador de una actividad social.
 
 ### Estrella 
 
@@ -32,8 +35,13 @@ Un socio común es estrella si lleva más de 20 años en la institución.
 Un jugador que tiene 50 o más partidos en el club es una estrella.
  
 Pero un jugador con menos partidos también podría serlo dependiendo del perfil del club:
-Si juega en un club Profesional, es estrella si el valor de su pase supera un valor configurable para el sistema, que es el mismo para todos los jugadores. 
-Si juega en un club Comunitario, es estrella si participa en 3 o más actividades del club (deportivas o sociales).
+Si juega en un club Profesional, 
+es estrella si el valor de su pase supera un valor configurable para el sistema, 
+que es el mismo para todos los jugadores. 
+
+Si juega en un club Comunitario, es estrella si participa en 3 o más actividades del club 
+(deportivas o sociales).
+
 Si juega en un club tradicional, puede ser estrella tanto porque su pase supera el valor configurado o porque participa en 3 o más actividades del club.
 
 Ejemplo: En un club tradicional, bellota, bombon y burbuja son jugadoras, y el profesor es un socio comun.

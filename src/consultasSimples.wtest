@@ -1,0 +1,58 @@
+import objects.*
+
+test "relacion club y socios" {
+
+	
+	const bellota = new Jugador(partidos = 10)
+	const independiente = new Club()
+	
+	independiente.agregarSocio(bellota)
+
+    assert.that(independiente.pertenece(bellota))
+    assert.equals(independiente, bellota.club())
+    
+}
+
+test "relacion Actividad Social y Socios" {
+	
+	const profesor = new SocioComun()
+	const asados = new Actividad(socioDestacado = profesor)
+    asados.agregar(profesor)
+    assert.equals(#{profesor}, asados.integrantes())
+	
+}
+
+test "relacion Jugador y Equipo" {
+	
+	const bellota = new Jugador(partidos=10)
+	const futbol = new Actividad(socioDestacado = bellota)
+    futbol.agregar(bellota)
+    assert.equals(#{bellota}, futbol.integrantes())
+	
+}
+
+test "socios destacados" {
+	
+	const independiente = new Club()
+	const bellota = new Jugador(partidos=10)
+	const bombon = new Jugador(partidos=10)
+	independiente.agregarSocio(bellota)
+	independiente.agregarSocio(bombon)
+	
+	
+	const futbol = new Actividad(socioDestacado = bellota)
+	independiente.agregarActividad(futbol)
+    
+    futbol.agregar(bellota)
+    futbol.agregar(bombon)
+    
+    
+    assert.that(bellota.esDetacado())
+    assert.notThat(bombon.esDetacado())
+    
+	
+}
+
+
+
+

@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>/home/leo/workspace/clubes/.README.md.html</title>
+<title>/home/leo/workspace/git/2020s2---clubes-lgassman/.README.md.html</title>
 
 
 <style type="text/css">
@@ -649,34 +649,34 @@ function setDocumentScrollTop(ypos)
 <p>Cada actividad (sea un equipo o una actividad social) es evaluada. La evaluaci&oacute;n de un club depende de las evaluaciones de sus actividades, las cuales pueden ser modificadas por las sanciones que reciben.</p> 
 <p>Si bien cualquier club puede tener equipos y actividades sociales, cada club define un perfil que determina el foco de la instituci&oacute;n. &Eacute;ste puede ser tradicional, comunitario, o profesional.</p> 
 <h2> <a id="requerimientos" class="anchor" href="#requerimientos" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requerimientos.</h2> 
-<ol> 
- <li> <p>Saber si un socio es estrella, lo cual es distinto de si se trata de un jugador o un socio com&uacute;n. Un socio com&uacute;n es estrella si lleva m&aacute;s de 20 a&ntilde;os en la instituci&oacute;n. Un jugador que tiene 50 o m&aacute;s partidos en el club es una estrella. Pero un jugador con menos partidos tambi&eacute;n podr&iacute;a serlo dependiendo del perfil del club: Si juega en un club Profesional, es estrella si el valor de su pase supera un valor configurable para el sistema, que es el mismo para todos los jugadores. Si juega en un club Comunitario, es estrella si participa en 3 o m&aacute;s actividades del club (deportivas o sociales). Si juega en un club tradicional, puede ser estrella tanto porque su pase supera el valor configurado o porque participa en 3 o m&aacute;s actividades del club. Sanciones: Se puede sancionar tanto al club integralmente como a una actividad particular. Si se sanciona al club, el efecto es que se aplica la sanci&oacute;n a todas sus actividades. Para un equipo interesa saber la cantidad de veces que fue sancionado. Mientras que si una actividad social es sancionada, la misma queda suspendida hasta que se determine lo contrario. Un club con menos de 500 socios no puede ser sancionado de manera integral (pero s&iacute; se puede sancionar a una actividad del mismo). Se pide que el sistema permita:</p> 
-  <ul> 
-   <li>Sancionar un club</li> 
-   <li>Sancionar una actividad</li> 
-   <li>Reanudar una actividad social</li> 
-   <li>Saber la cantidad de sanciones de un equipo</li> 
-   <li>Saber si una actividad social est&aacute; suspendida</li> 
-  </ul> </li> 
- <li> <p>Obtener la evaluaci&oacute;n de una actividad, el cual se mide como un n&uacute;mero de unidades. Los equipos suman 5 unidades por campeonato obtenido, 2 unidades por cada miembro del plantel y 5 puntos m&aacute;s si su capit&aacute;n es una estrella. Adem&aacute;s se le restan 20 puntos por cada sanci&oacute;n aplicada. Para un equipo de f&uacute;tbol vale la regla de todos los equipos, pero se le suman adem&aacute;s 5 puntos por cada estrella del plantel (En este caso si el capit&aacute;n es una estrella aportar&iacute;a 10 puntos, 5 por la regla de “capit&aacute;n estrella” y 5 por la regla de “miembro del plantel estrella”). Adem&aacute;s, cada sanci&oacute;n descuenta 30 puntos en lugar de los 20 que descuenta para otros deportes. La evaluaci&oacute;n de una actividad social es un valor que se conoce para cada actividad, siempre y cuando no est&eacute; suspendida. Si se encontrara suspendida se eval&uacute;a con 0.</p> </li> 
- <li> <p>Obtener la evaluaci&oacute;n de un club, el cual se calcula como la divisi&oacute;n entre un n&uacute;mero llamado evaluaci&oacute;n bruta y la cantidad de socios del mismo. Para la evaluaci&oacute;n bruta tambi&eacute;n se tiene en cuenta el gasto mensual del club, que es un valor que se conoce para cada club. La evaluaci&oacute;n bruta se calcula distinto para cada perfil:</p> 
-  <ul> 
-   <li>Tradicional: Es la suma de las evaluaciones de sus actividades menos el gasto mensual del club.</li> 
-   <li>Comunitario: Es la suma de las evaluaciones de sus actividades (no interesa los gastos)</li> 
-   <li>Profesional: Es el doble de la suma de las evaluaciones de sus actividades menos 5 veces el gasto mensual del club.</li> 
-  </ul> </li> 
+<h3> <a id="consultas-simples" class="anchor" href="#consultas-simples" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Consultas simples</h3> 
+<ul> 
+ <li> <p>Saber todos los socios de un club,</p> </li> 
+ <li> <p>todos los jugadores de un equipo y</p> </li> 
+ <li> <p>todos los socios de una actividad social</p> </li> 
+ <li> <p>Saber el socio m&aacute;s viejo de un club.</p> </li> 
  <li> <p>Obtener los socios destacados de un club, un socio destacado es aquel que es capit&aacute;n de un equipo u organizador de una actividad social.</p> </li> 
- <li> <p>Obtener de entre los socios destacados, aquellos que adem&aacute;s son estrellas.</p> </li> 
- <li> <p>Saber si un equipo es experimentado. Un equipo es experimentado si todos los miembros del plantel tienen al menos 10 partidos jugados.</p> </li> 
- <li> <p>Saber si un club es prestigioso. Un club es prestigioso si tiene al menos un equipo experimentado o al menos una de sus actividades sociales tiene 5 o m&aacute;s participantes estrellas.</p> </li> 
- <li> <p>Transferir un jugador de un equipo a otro, teniendo en cuenta que: -Un jugador que es socio destacado no puede ser transferido.</p> 
-  <ul> 
-   <li>Tampoco se puede transferir entre equipos del mismo club.</li> 
-   <li>Se debe remover el jugador de todos los equipos y actividades del club origen</li> 
-   <li>Se debe agregar el jugador al equipo destino.</li> 
-   <li>La transferencia afecta a la cantidad de socios de ambos clubes (El club del equipo origen tiene un socio menos y el club del equipo destino tiene un socio m&aacute;s)</li> 
-   <li>La cantidad de partidos jugados del jugador se resetea.</li> 
-  </ul> </li> 
-</ol>
+</ul> 
+<h3> <a id="estrella" class="anchor" href="#estrella" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Estrella</h3> 
+<p>Saber si un socio es estrella, lo cual es distinto de si se trata de un jugador o un socio com&uacute;n. Un socio com&uacute;n es estrella si lleva m&aacute;s de 20 a&ntilde;os en la instituci&oacute;n. Un jugador que tiene 50 o m&aacute;s partidos en el club es una estrella.</p> 
+<p>Pero un jugador con menos partidos tambi&eacute;n podr&iacute;a serlo dependiendo del perfil del club: Si juega en un club Profesional, es estrella si el valor de su pase supera un valor configurable para el sistema, que es el mismo para todos los jugadores.</p> 
+<p>Si juega en un club Comunitario, es estrella si participa en 3 o m&aacute;s actividades del club (deportivas o sociales).</p> 
+<p>Si juega en un club tradicional, puede ser estrella tanto porque su pase supera el valor configurado o porque participa en 3 o m&aacute;s actividades del club.</p> 
+<p>Ejemplo: En un club tradicional, bellota, bombon y burbuja son jugadoras, y el profesor es un socio comun. - Bellota: su pase es de un millon, juega al futbol y al basquet. Aun no disputa ning&uacute;n partido. Tiene 0 a&ntilde;os de antiguedad. - Bombon: su pase es de 1000, juega al basquet. tiene 100 partidos. Tiene 0 a&ntilde;os de antiguedad. - Burbuja: su pase es de 1000, juega al futbol y al basquet. Tambi&eacute;n va a los asados de los domingos. Tiene 10 partidos jugados. Tiene 0 a&ntilde;os de antiguedad - Profesor: solo asiste a los asados del domingo, tiene anio de antiguedad. Tiene 0 a&ntilde;os de antiguedad. - el valor del pase para ser considerado estrella es de 500000.</p> 
+<p>En este caso Bellota es estrella por el valor del pase. Burbuja es estrella por los partidos jugados. Burbuja es estrella por tener 3 actividades. El profesor no es estrella ya que no tiene la antiguedad requerida</p> 
+<p>En las mismas condiciones pero en un club profesional, solo Bellota y Bombon son estrellas, mientras que en un club comunitario solo Bomb&oacute;n y Burbuja son estrella.</p> 
+<p>Tambi&eacute;n se pide Obtener de entre los socios destacados, aquellos que adem&aacute;s son estrellas.</p> 
+<h3> <a id="sanciones" class="anchor" href="#sanciones" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sanciones:</h3> 
+<p>Se puede sancionar tanto al club integralmente como a una actividad particular. Si se sanciona al club, el efecto es que se aplica la sanci&oacute;n a todas sus actividades. Para un equipo interesa saber la cantidad de veces que fue sancionado. Mientras que si una actividad social es sancionada, la misma queda suspendida hasta que se determine lo contrario. Un club con menos de 500 socios no puede ser sancionado de manera integral (pero s&iacute; se puede sancionar a una actividad del mismo). Se pide que el sistema permita: - Sancionar un club - Sancionar una actividad - Reanudar una actividad social - Saber la cantidad de sanciones de un equipo - Saber si una actividad social est&aacute; suspendida</p> 
+<h3> <a id="evaluaciones-de-actividades" class="anchor" href="#evaluaciones-de-actividades" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Evaluaciones de actividades</h3> 
+<p>Obtener la evaluaci&oacute;n de una actividad, el cual se mide como un n&uacute;mero de unidades. Los equipos suman 5 unidades por campeonato obtenido, 2 unidades por cada miembro del plantel y 5 puntos m&aacute;s si su capit&aacute;n es una estrella. Adem&aacute;s se le restan 20 puntos por cada sanci&oacute;n aplicada. Para un equipo de f&uacute;tbol vale la regla de todos los equipos, pero se le suman adem&aacute;s 5 puntos por cada estrella del plantel (En este caso si el capit&aacute;n es una estrella aportar&iacute;a 10 puntos, 5 por la regla de “capit&aacute;n estrella” y 5 por la regla de “miembro del plantel estrella”). Adem&aacute;s, cada sanci&oacute;n descuenta 30 puntos en lugar de los 20 que descuenta para otros deportes. La evaluaci&oacute;n de una actividad social es un valor que se conoce para cada actividad, siempre y cuando no est&eacute; suspendida. Si se encontrara suspendida se eval&uacute;a con 0.</p> 
+<h3> <a id="evaluaciones-de-clubes" class="anchor" href="#evaluaciones-de-clubes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Evaluaciones de clubes</h3> 
+<p>Obtener la evaluaci&oacute;n de un club, el cual se calcula como la divisi&oacute;n entre un n&uacute;mero llamado evaluaci&oacute;n bruta y la cantidad de socios del mismo. Para la evaluaci&oacute;n bruta tambi&eacute;n se tiene en cuenta el gasto mensual del club, que es un valor que se conoce para cada club. La evaluaci&oacute;n bruta se calcula distinto para cada perfil: - Tradicional: Es la suma de las evaluaciones de sus actividades menos el gasto mensual del club. - Comunitario: Es la suma de las evaluaciones de sus actividades (no interesa los gastos) - Profesional: Es el doble de la suma de las evaluaciones de sus actividades menos 5 veces el gasto mensual del club.</p> 
+<h3> <a id="equipos-experimentados" class="anchor" href="#equipos-experimentados" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Equipos experimentados</h3> 
+<p>Saber si un equipo es experimentado. Un equipo es experimentado si todos los miembros del plantel tienen al menos 10 partidos jugados.</p> 
+<h3> <a id="clubes-prestigiosos" class="anchor" href="#clubes-prestigiosos" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Clubes Prestigiosos</h3> 
+<p>Saber si un club es prestigioso. Un club es prestigioso si tiene al menos un equipo experimentado o al menos una de sus actividades sociales tiene 5 o m&aacute;s participantes estrellas.</p> 
+<h3> <a id="transferir" class="anchor" href="#transferir" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Transferir</h3> 
+<p>Transferir un jugador de un equipo a otro, teniendo en cuenta que: -Un jugador que es socio destacado no puede ser transferido. - Tampoco se puede transferir entre equipos del mismo club. - Se debe remover el jugador de todos los equipos y actividades del club origen - Se debe agregar el jugador al equipo destino. - La transferencia afecta a la cantidad de socios de ambos clubes (El club del equipo origen tiene un socio menos y el club del equipo destino tiene un socio m&aacute;s) - La cantidad de partidos jugados del jugador se resetea.</p>
 </body>
 </html>
